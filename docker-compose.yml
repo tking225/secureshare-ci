@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    image: secureshare-ci:latest
+    container_name: secureshare-app
+    restart: unless-stopped
+    ports:
+      - "80:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET est requis}
+    volumes:
+      - secureshare_data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  secureshare_data:
