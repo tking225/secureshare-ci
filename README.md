@@ -498,32 +498,6 @@ Deux pages obligatoires, accessibles depuis toutes les pages de l'application :
 
 ---
 
-## Limites connues
-
-Cette application est un projet pédagogique. Elle présente les limites suivantes, assumées :
-
-- **Stockage local** : SQLite et le disque du serveur ne permettent pas de monter en charge horizontalement. Pour un usage réel à grande échelle, il faudrait PostgreSQL et un stockage objet (S3).
-- **Pas de chiffrement de bout en bout** : un administrateur avec accès au serveur peut techniquement lire les fichiers déposés.
-- **Pas de vérification d'email** à l'inscription.
-- **Pas de récupération de mot de passe** en cas d'oubli.
-- **Pas de purge automatique** des fichiers expirés : le lien est refusé, mais le fichier reste sur le disque jusqu'à suppression manuelle.
-
----
-
-## Difficultés rencontrées
-
-| Problème | Cause | Solution |
-|----------|-------|----------|
-| `better-sqlite3` ne compilait pas | Absence des outils C++ sous Windows | Installation des outils de compilation dans le Dockerfile (`python3 make g++`) |
-| Erreur CSP « Executing inline script violates » | Helmet bloque les scripts inline | Extraction des scripts inline dans des fichiers séparés (`public/js/*.js`) |
-| Cookie de session refusé en HTTP | Le flag `Secure` empêchait la pose du cookie en HTTP | Introduction de la variable `COOKIE_SECURE` |
-| `upgrade-insecure-requests` cassait le CSS | Helmet force HTTPS par défaut | Désactivation conditionnelle via `HTTPS_ENABLED` |
-| `bash: '\r': command not found` | Fins de ligne CRLF dans les scripts `.sh` | Conversion en LF dans VSCode avant transfert |
-| `npm test` échouait sur Windows | Le script utilisait `tests/` avec slash final | Remplacement par `node --test tests/api.test.js` |
-| Warning de sécurité sur multer 1.x | Version obsolète avec CVE connues | Mise à jour vers multer 2.x |
-
----
-
 ## Liens
 
 | Ressource | URL |
