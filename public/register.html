@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créer un compte · SecureShare CI</title>
+<meta name="description" content="Créez un compte SecureShare CI pour partager vos fichiers via des liens expirants.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="register">
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="/">
+      <img src="/favicon.svg" alt="">
+      SecureShare CI
+    </a>
+    <nav class="site-nav">
+      <a href="/login.html">Se connecter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="narrow animate-in">
+    <h1>Créer un compte</h1>
+    <p>Vous avez besoin d'un compte pour déposer un fichier. La personne qui reçoit le lien n'en a pas besoin.</p>
+
+    <div id="alert"></div>
+
+    <form id="form" class="card" novalidate>
+      <div class="form-group">
+        <label for="name">Nom affiché</label>
+        <input type="text" id="name" name="name" autocomplete="name" required maxlength="80">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Adresse email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8">
+        <span class="hint">8 caractères minimum. Une phrase courte et unique vaut mieux qu'un mot complexe réutilisé ailleurs.</span>
+      </div>
+
+      <button class="btn btn-accent" type="submit" id="submit">Créer mon compte</button>
+    </form>
+
+    <p class="muted mt-2">En créant un compte, vous acceptez les <a href="/cgu.html">conditions d'utilisation</a> et la <a href="/rgpd.html">politique de données</a>.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container inner">
+    <div>© <span id="y"></span> SecureShare CI</div>
+    <nav>
+      <a href="/cgu.html">CGU</a>
+      <a href="/rgpd.html">Données personnelles</a>
+    </nav>
+  </div>
+  <script src="/js/auth.js"></script>
+  <script src="/js/init.js"></script>
+</footer>
+</body>
+</html>

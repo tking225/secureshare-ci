@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tableau de bord · SecureShare CI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="dashboard">
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="/">
+      <img src="/favicon.svg" alt="">
+      SecureShare CI
+    </a>
+    <nav class="site-nav">
+      <span id="who" class="muted" style="font-size:.9rem"></span>
+      <button class="btn btn-ghost" id="logout" type="button">Se déconnecter</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="mt-0">Tableau de bord</h1>
+    <p class="muted">Déposez un fichier, réglez sa durée de vie, partagez le lien.</p>
+
+    <div id="alert"></div>
+
+    <section style="border-top:none;padding-top:1rem">
+      <h2>Nouveau partage</h2>
+
+      <form id="uploadForm" class="card" novalidate>
+        <div class="form-group">
+          <label for="file">Fichier à partager</label>
+          <input type="file" id="file" name="file" required>
+          <span class="hint">25 Mo maximum.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="expiresIn">Expiration</label>
+            <select id="expiresIn" name="expiresIn">
+              <option value="1">1 heure</option>
+              <option value="6">6 heures</option>
+              <option value="24" selected>24 heures</option>
+              <option value="72">3 jours</option>
+              <option value="168">7 jours</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="maxDownloads">Téléchargements maximum</label>
+            <input type="number" id="maxDownloads" name="maxDownloads" min="1" max="100" placeholder="Illimité">
+            <span class="hint">Laissez vide pour illimité.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe (optionnel)</label>
+          <input type="text" id="password" name="password" autocomplete="off" minlength="4" maxlength="64">
+          <span class="hint">À transmettre séparément du lien.</span>
+        </div>
+
+        <div class="progress" id="progress" hidden><div class="bar" id="bar"></div></div>
+
+        <button class="btn btn-accent" type="submit" id="uploadBtn" style="margin-top:1rem">Envoyer et générer le lien</button>
+      </form>
+
+      <div id="result"></div>
+    </section>
+
+    <section>
+      <h2>Mes fichiers</h2>
+      <div id="list">
+        <p class="muted">Chargement…</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container inner">
+    <div>© <span id="y"></span> SecureShare CI</div>
+    <nav>
+      <a href="/cgu.html">CGU</a>
+      <a href="/rgpd.html">Données personnelles</a>
+    </nav>
+  </div>
+  <script src="/js/init.js"></script>
+  <script src="/js/dashboard.js"></script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Données personnelles · SecureShare CI</title>
+<meta name="description" content="Politique de protection des données personnelles de SecureShare CI.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="/">
+      <img src="/favicon.svg" alt="">
+      SecureShare CI
+    </a>
+    <nav class="site-nav">
+      <a href="/">Accueil</a>
+      <a href="/cgu.html">CGU</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="narrow doc">
+    <h1>Protection des données personnelles</h1>
+    <p class="updated">Dernière mise à jour : 1er janvier 2025</p>
+
+    <h2>Responsable du traitement</h2>
+    <p>SecureShare CI, joignable à <a href="mailto:contact@secureshare.ci">contact@secureshare.ci</a>, est responsable du traitement des données décrites ci-dessous.</p>
+
+    <h2>Données collectées</h2>
+    <ul>
+      <li><strong>Compte :</strong> nom affiché, adresse email, empreinte du mot de passe (bcrypt).</li>
+      <li><strong>Fichiers :</strong> nom du fichier, taille, type MIME, empreinte du mot de passe éventuel.</li>
+      <li><strong>Journaux :</strong> date et heure du dépôt, du téléchargement et de la suppression, adresse IP de la requête.</li>
+    </ul>
+
+    <h2>Finalités</h2>
+    <ul>
+      <li>Fournir le service de partage et faire fonctionner l'authentification.</li>
+      <li>Permettre la suppression automatique des fichiers arrivés à expiration.</li>
+      <li>Détecter les usages abusifs et répondre aux obligations légales.</li>
+    </ul>
+
+    <h2>Base légale</h2>
+    <p>Exécution du contrat pour les données de compte et de fichier. Intérêt légitime pour les journaux de sécurité. Consentement pour l'usage éventuel d'outils de mesure d'audience.</p>
+
+    <h2>Durées de conservation</h2>
+    <ul>
+      <li>Compte : jusqu'à sa suppression par l'utilisateur.</li>
+      <li>Fichier : jusqu'à l'expiration du lien, plus 24 heures de purge technique.</li>
+      <li>Journaux d'activité : 30 jours glissants.</li>
+    </ul>
+
+    <h2>Destinataires</h2>
+    <p>Les données ne sont ni vendues ni cédées. Elles sont hébergées sur une infrastructure située dans l'Union européenne. Aucun transfert vers un pays tiers n'est effectué sans garanties appropriées.</p>
+
+    <h2>Sécurité</h2>
+    <ul>
+      <li>Mots de passe hachés avec bcrypt, coût 12.</li>
+      <li>Sessions JWT stockées dans un cookie <code>httpOnly</code> et <code>sameSite=lax</code>.</li>
+      <li>En-têtes HTTP restrictifs via Helmet, dont une politique de sécurité de contenu.</li>
+      <li>Limitation du débit à 300 requêtes par tranche de 15 minutes et par adresse IP.</li>
+      <li>Accès administrateur uniquement via SSH avec clé, sans mot de passe.</li>
+    </ul>
+
+    <h2>Vos droits</h2>
+    <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour l'exercer, écrivez à <a href="mailto:contact@secureshare.ci">contact@secureshare.ci</a>. Une réponse vous sera apportée sous trente jours.</p>
+
+    <h2>Cookies</h2>
+    <p>Un seul cookie est déposé, nommé <code>token</code>. Il sert à maintenir votre session et expire au bout de sept jours. Aucun cookie publicitaire ni de suivi tiers n'est utilisé.</p>
+
+    <h2>Réclamation</h2>
+    <p>En cas de désaccord persistant, vous pouvez saisir l'autorité de contrôle compétente de votre pays de résidence.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container inner">
+    <div>© <span id="y"></span> SecureShare CI</div>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/cgu.html">CGU</a>
+    </nav>
+  </div>
+  <script src="/js/init.js"></script>
+</footer>
+</body>
+</html>

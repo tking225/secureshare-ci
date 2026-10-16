@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecureShare CI · Partage de fichiers avec expiration</title>
+<meta name="description" content="Partagez un fichier avec un lien unique, une date d'expiration et un mot de passe optionnel. 25 Mo par fichier, hébergement en Europe.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="/">
+      <img src="/favicon.svg" alt="">
+      SecureShare CI
+    </a>
+    <nav class="site-nav">
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#securite">Ce que fait le service</a>
+      <a href="/login.html">Se connecter</a>
+      <a class="btn btn-primary" href="/register.html">Créer un compte</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container animate-in">
+      <h1>Un fichier, un lien, une date d'expiration.</h1>
+      <p class="lede">
+        SecureShare CI permet aux étudiants et aux petites structures de transmettre un fichier
+        de 25 Mo maximum via un lien qui expire à l'heure que vous choisissez. Le destinataire
+        n'a pas besoin de compte. Le mot de passe est optionnel mais recommandé.
+      </p>
+      <div class="actions">
+        <a class="btn btn-accent" href="/register.html">Créer un compte</a>
+        <a class="btn btn-ghost" href="/login.html">J'ai déjà un compte</a>
+      </div>
+      <div class="meta">
+        <span>25 Mo par fichier</span>
+        <span>Expiration de 1 heure à 7 jours</span>
+        <span>Hébergement Union européenne</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="fonctionnement">
+    <div class="container">
+      <h2>Fonctionnement</h2>
+      <p>Trois étapes, pas de compte pour la personne qui reçoit le fichier.</p>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Déposez le fichier</h3>
+            <p>Depuis votre tableau de bord, vous choisissez un fichier jusqu'à 25 Mo.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Réglez l'expiration</h3>
+            <p>Vous décidez au bout de combien d'heures le lien cesse de fonctionner, et si un mot de passe est nécessaire.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Transmettez le lien</h3>
+            <p>Vous envoyez l'URL par le canal de votre choix. Le destinataire ouvre la page, saisit le mot de passe si demandé, télécharge.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="securite">
+    <div class="container">
+      <h2>Ce que fait le service</h2>
+
+      <div class="features">
+        <div class="feature">
+          <h3>Expiration automatique</h3>
+          <p>Chaque lien porte une date de fin. Passé ce délai, le serveur refuse le téléchargement, même si le lien circule encore.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Mot de passe optionnel</h3>
+          <p>Le mot de passe est haché avec bcrypt avant stockage. Personne, y compris l'administrateur, ne peut le lire.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Quota de téléchargements</h3>
+          <p>Vous pouvez plafonner le nombre de téléchargements. Pratique pour un devoir à rendre à un seul correcteur.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Journal d'activité</h3>
+          <p>Chaque dépôt, suppression et téléchargement est horodaté et rattaché au compte concerné.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container inner">
+    <div>© <span id="y"></span> SecureShare CI</div>
+    <nav>
+      <a href="/cgu.html">Conditions d'utilisation</a>
+      <a href="/rgpd.html">Données personnelles</a>
+      <a href="mailto:contact@secureshare.ci">Contact</a>
+    </nav>
+  </div>
+  <script src="/js/init.js"></script>
+</footer>
+</body>
+</html>
