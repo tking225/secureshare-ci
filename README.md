@@ -258,25 +258,26 @@ Sur la console AWS :
 
 | Paramètre | Valeur |
 |-----------|--------|
-| AMI | Ubuntu Server 24.04 LTS |
+| AMI | Ubuntu Server 26.04 LTS |
 | Type | `t3.small` (2 vCPU, 2 Go de RAM) |
 | Paire de clés | Créer une paire `.pem` et la télécharger |
-| Stockage | 20 Go gp3 minimum |
+| Stockage | 8 Go gp3 minimum |
 | Security group | Voir ci-dessous |
 
 **Règles entrantes du groupe de sécurité :**
 
 | Type | Protocole | Port | Source |
 |------|-----------|------|--------|
-| SSH | TCP | 22 | Mon IP |
+| SSH | TCP | 22 | 0.0.0.0/0|
 | HTTP | TCP | 80 | 0.0.0.0/0 |
+|HTTPS|TCP|443|0.0.0.0/0|
 
 Aucun autre port ne doit être ouvert.
 
 ### 3. Se connecter en SSH
 
 ```bash
-ssh -i chemin/vers/cle.pem ubuntu@<ip-publique>
+ssh -i chemin/vers/cle.pem ubuntu@35.181.63.240
 ```
 
 ### 4. Installer Docker
