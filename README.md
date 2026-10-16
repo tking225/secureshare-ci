@@ -20,7 +20,13 @@ L'application s'adresse aux :
 
 Le nom « CI » fait référence à la Côte d'Ivoire, marché cible initial du projet.
 
----
+## Auteurs
+
+Projet réalisé en groupe de trois :
+
+- **David Allangba** - Développement du serveur et de l'interface, déploiement
+- **Guei Prince** - Documentation et tests fonctionnels
+- **Favour Ogechi** - Révision de l'interface et de l'expérience utilisateur
 
 ## Aperçu
 
@@ -45,7 +51,7 @@ RGPD
 6. Le destinataire ouvre le lien, saisit le mot de passe si nécessaire, télécharge.
 7. À l'expiration, le lien ne fonctionne plus.
 
----
+
 
 ## Fonctionnalités
 
