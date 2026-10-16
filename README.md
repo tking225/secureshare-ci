@@ -530,7 +530,7 @@ Cette application est un projet pédagogique. Elle présente les limites suivant
 |-----------|-----|
 | Dépôt GitHub | https://github.com/tking225/secureshare-ci |
 | Image Docker Hub | https://hub.docker.com/r/tking1222/secureshare-ci |
-| Application en ligne | http://<ip-publique> |
+| Application en ligne | http://35.181.63.240 |
 
 ---
 
